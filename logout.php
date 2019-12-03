@@ -1,7 +1,7 @@
 <?php
 $host ="localhost";
-$user ="root";
-$pass ="digh1221";
+$user ="park";
+$pass ="0000";
 //mysql접속
 $db = new mysqli($host,$user,$pass);
 if(!$db){

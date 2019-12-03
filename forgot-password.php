@@ -1,8 +1,8 @@
 <?php
 include_once('./mailer.lib.php');
 $host ="localhost";
-$user ="root";
-$pass ="digh1221";
+$user ="park";
+$pass ="0000";
 //mysql 연동
 $mysqli = new mysqli($host,$user,$pass);
 if(!$mysqli){

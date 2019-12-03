@@ -2,8 +2,8 @@
 //세션사용을 하기 위한 필수메서드, 세션사용선언
 session_start();
 $host ="localhost";
-$user ="root";
-$pass ="digh1221";
+$user ="park";
+$pass ="0000";
 //mysql 연동
 $mysqli = new mysqli($host,$user,$pass);
 if(!$mysqli){
@@ -127,7 +127,7 @@ if(!$ret){
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Good Games</title>
+  <title>STACK</title>
   <!--a태그 클릭시 색깔 바뀌게 하기-->
   <style type="text/css">
   a:link{text-decoration: none; color: #2E64FE;}
@@ -147,9 +147,12 @@ if(!$ret){
   <link href="css/sb-admin.css" rel="stylesheet">
   <link rel="stylesheet" href="./css1/normalize.css" />
   <link rel="stylesheet" href="./css1/board.css" />
+
+
   <script src="./js1/jquery-2.1.3.min.js"></script>
-  <title>Document</title>
+  <title>HOMEPAGE</title>
   <script language="javascript">
+
 
 //== 로그인 안한상태에서 글쓰기 버튼 클릭시 alert띄우기==
 	function writestatus(){
@@ -201,114 +204,105 @@ if(!$ret){
   </script>
 
 
+
 </head>
 
 <!-- 삽입해야 할 소스 끝 -->
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-  <!-- Navigation-->
+
   <!--navbar-dark: navbar에 있는 모든 글씨 색깔 -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"  id="mainNav">
-    <a class="navbar-brand" href="home.php" onclick="openPopup();">Good Games</a>
+    <a class="navbar-brand" href="home.php" onclick="home.php"><img src="logo.png"></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="home.php">
-            <i class="fa fa-fw fa-home"></i>
-            <span class="nav-link-text">메인</span>
-          </a>
-        </li>
-	<!--자유 게시판-->
+				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
 
-	<!--게임 순위-->
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-          <a class="nav-link" href="game-ranking.html">
-            <i class="fa fa-fw fa-trophy"></i>
-            <span class="nav-link-text">게임 순위</span>
-          </a>
-        </li>
-	<!--게임 추천 게시판-->
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-gamepad"></i>
-            <span class="nav-link-text">게임추천 게시판</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents">
-            <li>
-              <a href="rpg-community.php">RPG</a>
-            </li>
-            <li>
-              <a href="fps-community.php">FPS</a>
-            </li>
-	    <li>
-              <a href="aos-community.php">AOS</a>
-            </li>
-	    <li>
-              <a href="etc-community.php">홍보 게시판</a>
-            </li>
-          </ul>
-        </li>
-	<!--등록-->
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-file"></i>
-            <span class="nav-link-text">register</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseMulti">
+	<!-- 게시판 -->
+			<li class="nav-item dropdown">
+ 				<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	 				<i class="fas fa-fw fa-list"></i>
+	 				<span>게시판</span>
+ 				</a>
+ 			<div class="dropdown-menu" aria-labelledby="pagesDropdown">
+	 			<a class="dropdown-item" href="advertice-table.php">홍보 게시판</a>
+	 			<a class="dropdown-item" href="notice-table.php">공지사항 게시판</a>
+ 			</div>
+		</li>
 
-            <li>
-                  <a href="./member/register.php">회원가입</a>
-                </li>
-                <li>
-                  <a href="forgot-password.php">비밀번호 찾기</a>
-                </li>
+	<!--스레드  -->
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fas fa-fw fa-list"></i>
+						<span>스레드</span>
+					</a>
+				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
+					<a class="dropdown-item" href="thread-table.php">스레드 목록</a>
+					<a class="dropdown-item" href="mythread.php">내 스레드</a>
+				</div>
+			</li>
 
-            <li>
+			<!--등록-->
+		        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+		          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+		            <i class="fa fa-fw fa-file"></i>
+		            <span class="nav-link-text">register</span>
+		          </a>
+		          <ul class="sidenav-second-level collapse" id="collapseMulti">
 
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="navbar-nav sidenav-toggler">
-        <li class="nav-item">
-          <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
-          </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
+		            <li>
+		                  <a href="./member/register.php">회원가입</a>
+		                </li>
+		                <li>
+		                  <a href="forgot-password.php">비밀번호 찾기</a>
+		                </li>
 
-<?php
-if(isset($_SESSION['is_login'])){//세션 값이 있을때 = "로그인 이후 상태"
-?>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>로그아웃</a>
-        </li>
-<?php
-}else{
-?>
-	<li class="nav-item">
-            <a class="nav-link" href="login.php">
-	     <i class="fa fa-fw fa-sign-in"></i>로그인</a>
-        </li>
-<?php
-}
-?>
-      </ul>
-    </div>
-  </nav>
+		            <li>
+
+		            </li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav sidenav-toggler">
+		        <li class="nav-item">
+		          <a class="nav-link text-center" id="sidenavToggler">
+		            <i class="fa fa-fw fa-angle-left"></i>
+		          </a>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav ml-auto">
+
+		<?php
+		if(isset($_SESSION['is_login'])){//세션 값이 있을때 = "로그인 이후 상태"
+		?>
+		        <li class="nav-item">
+		          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+		            <i class="fa fa-fw fa-sign-out"></i>로그아웃</a>
+		        </li>
+		<?php
+		}else{
+		?>
+			<li class="nav-item">
+		            <a class="nav-link" href="login.php">
+			     <i class="fa fa-fw fa-sign-in"></i>로그인</a>
+		        </li>
+		<?php
+		}
+		?>
+		      </ul>
+		    </div>
+		  </nav>
 <!-- nav end-->
   <div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#" >GoodGames</a>
+          <a href="home.php" >STACK</a>
         </li>
-        <li class="breadcrumb-item active">Game Image</li>
+        <li class="breadcrumb-item active">home</li>
       </ol>
 <!-- image-->
 	<div class="col-lg-10">
@@ -319,15 +313,17 @@ if(isset($_SESSION['is_login'])){//세션 값이 있을때 = "로그인 이후 �
               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
+							<center>
               <div class="carousel-item active">
-                <img class="d-block img-fluid" src="http://upload.inven.co.kr/upload/2014/09/18/bbs/i3094406033.jpg" alt="First slide">
+                <img class="d-block img-fluid" src="firstpic.png" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://i.imgur.com/NYFKxs2.jpg" alt="Second slide">
+                <img class="d-block img-fluid" src="secondpic.png" alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://image3.gamechosun.co.kr/extend/wlwl_upload/dataroom/df/2016/02/09/519664_1454943764.jpg" alt="Third slide">
+                <img class="d-block img-fluid" src="thirdpic.png" alt="Third slide">
               </div>
+						</center>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -338,17 +334,20 @@ if(isset($_SESSION['is_login'])){//세션 값이 있을때 = "로그인 이후 �
               <span class="sr-only">Next</span>
             </a>
           </div>
+				</div>
+
+
 
       <!-- free-community start-->
-    <article class="boardArticle">
-      <div class="card mb-3" style="width:900px; margin-left:200px; margin-right:200px;">
-        <div class="card-header">
-          <i class="fa fa-table"></i> 자유게시판</div>
-      <div id="boardList">
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered"  style="width:100%"cellspacing="0">
-              <thead>
+			<article class="boardArticle">
+	      <div class="card mb-3" style="width:900px; margin-left:200px; margin-right:200px;">
+			           <div class="card-header">
+			             <i class="fas fa-table"></i>
+			             공지사항 게시판</div>
+			           <div class="card-body">
+			             <div class="table-responsive">
+			               <table class="table table-bordered" id="boadList" width="100%" cellspacing="0">
+	              <thead>
                 <tr>
                   <th style="text-align: center;">번호</th>
                   <th style="text-align: center;">제목</th>
@@ -368,82 +367,138 @@ if(isset($_SESSION['is_login'])){//세션 값이 있을때 = "로그인 이후 �
               </tfoot>
               <tbody>
 	   	  <?php
-		if(isset($emptyData)) {
-		echo $emptyData;
-		} else {
-	            while($row = mysqli_fetch_assoc($result))
-	   	    {
-			$datetime = explode(' ',$row['b_date']);
-			$date = $datetime[0];
-			$time = $datetime[1];
-			if($date == Date('Y-m-d'))
-				$row['b_date']=$time;
-			else
-				$row['b_date']=$date;
-		  ?>
-<?php
-//댓글 갯수 뽑아오기
-$cosql = 'select count(*) as cnt from comment_advertisement where b_no = '.$row['b_no'];
-$coresult = mysqli_query($mysqli,$cosql);
-$corow = mysqli_fetch_assoc($coresult);
-?>
-                <tr>
-                  <td class="no"><?php echo $row['b_no']?></td>
-		<!--write/view.php?bno에서 마지막 bno는 view.php에서 GET으로 받는다. 그 bno값은 row['b_no']이다.-->
-                  <td class="title">
-			<a href="write/view.php?bno=<?php echo $row['b_no']?>"><?php echo $row['b_title']?><?php if($corow['cnt'] > 0){?><?php echo '('.$corow['cnt'].')'?></a>
-			<?php } ?>
-<?
-if($row['b_date'] == $time){
-echo "<img src='./images-4.png' width='20' heigh='20'/>";
-}
-?>
-		  </a>
-		   </td>
-                  <td class="author"><?php echo $row['b_id']?></td>
-                  <td class="date"><?php echo $row['b_date']?></td>
-                  <td class="hit"><?php echo $row['b_hit']?></td>
-                </tr>
-		<?php
-			}
-		}
-		?>
-              </tbody>
-            </table>
-	</div>
-<div class="btnSet">
-<?php if(isset($_SESSION['is_login'])){//세션 값이 있을때 = "로그인 이후 상태"
-?>
-	<a class="btnWrite btn" href="write/write.php">글쓰기</a>
+						if(isset($emptyData)) {
+						echo $emptyData;
+						} else {
+					            while($row = mysqli_fetch_assoc($result))
+					   	    {
+							$datetime = explode(' ',$row['b_date']);
+							$date = $datetime[0];
+							$time = $datetime[1];
+							if($date == Date('Y-m-d'))
+								$row['b_date']=$time;
+							else
+								$row['b_date']=$date;
+						  ?>
+				<?php
+				//댓글 갯수 뽑아오기
+				$cosql = 'select count(*) as cnt from comment_advertisement where b_no = '.$row['b_no'];
+				$coresult = mysqli_query($mysqli,$cosql);
+				$corow = mysqli_fetch_assoc($coresult);
+				?>
+				                <tr>
+				                  <td class="no"><?php echo $row['b_no']?></td>
+						<!--write/view.php?bno에서 마지막 bno는 view.php에서 GET으로 받는다. 그 bno값은 row['b_no']이다.-->
+				                  <td class="title">
+							<a href="write/view.php?bno=<?php echo $row['b_no']?>"><?php echo $row['b_title']?><?php if($corow['cnt'] > 0){?><?php echo '('.$corow['cnt'].')'?></a>
+							<?php } ?>
+				<?
+				if($row['b_date'] == $time){
+				echo "<img src='./images-4.png' width='20' heigh='20'/>";
+				}
+				?>
+						  </a>
+						   </td>
+				                  <td class="author"><?php echo $row['b_id']?></td>
+				                  <td class="date"><?php echo $row['b_date']?></td>
+				                  <td class="hit"><?php echo $row['b_hit']?></td>
+				                </tr>
+						<?php
+							}
+						}
+						?>
+				              </tbody>
+				            </table>
+					</div>
+				<div class="btnSet">
+				<?php if(isset($_SESSION['is_login'])){//세션 값이 있을때 = "로그인 이후 상태"
+				?>
+					<a class="btnWrite btn" href="write/write.php">글쓰기</a>
 
-<?php
-}else{
-?>
-	<a href="#" class="btnWrite btn" onclick="writestatus()">글쓰기</a>
-<?php
-}
-?>
-</div>
-        </div>
-	<div class="paging">
-		<?php echo $paging ?>
-	</div>
-			<div class="searchBox">
-				<form action="./home.php" method="get">
-					<select name="searchColumn">
-						<option <?php echo $searchColumn=='b_title'?'selected="selected"':null?> value="b_title">제목</option>
-						<option <?php echo $searchColumn=='b_content'?'selected="selected"':null?> value="b_content">내용</option>
-						<option <?php echo $searchColumn=='b_id'?'selected="selected"':null?> value="b_id">작성자</option>
-					</select>
-					<input type="text" name="searchText" value="<?php echo isset($searchText)?$searchText:null?>">
-					<button type="submit">검색</button>
-				</form>
+				<?php
+				}else{
+				?>
+					<a href="#" class="btnWrite btn" onclick="writestatus()">글쓰기</a>
+				<?php
+				}
+				?>
+				</div>
+				        </div>
+					<div class="paging">
+						<?php echo $paging ?>
+					</div>
+							<div class="searchBox">
+								<form action="./home.php" method="get">
+									<select name="searchColumn">
+										<option <?php echo $searchColumn=='b_title'?'selected="selected"':null?> value="b_title">제목</option>
+										<option <?php echo $searchColumn=='b_content'?'selected="selected"':null?> value="b_content">내용</option>
+										<option <?php echo $searchColumn=='b_id'?'selected="selected"':null?> value="b_id">작성자</option>
+									</select>
+									<input type="text" name="searchText" value="<?php echo isset($searchText)?$searchText:null?>">
+									<button type="submit">검색</button>
+								</form>
+							</div>
+					</div>
 			</div>
-          </div>
-	</div>
-      </div>
-    </div>
-</article>
+		</article>
+
+			<!-- Icon Cards-->
+			<div class="container">
+				<div class="container-header">	카테고리 별 스레드</div>
+				<div class="row" >
+				<div class="col-xl-3 col-sm-6 mb-3">
+					<div class="card text-white bg-primary o-hidden h-100">
+						<div class="card-body">
+							<div class="card-body-icon">
+								<i class="fas fa-fw fa-comments"></i>
+							</div>
+							<div class="mr-5">취미</div>
+						</div>
+						<a class="card-footer text-white clearfix small z-1" href="#">
+							<span class="float-left">보러가기</span>
+							<span class="float-right">
+								<i class="fas fa-angle-right"></i>
+							</span>
+						</a>
+					</div>
+				</div>
+				<div class="col-xl-3 col-sm-6 mb-3">
+					<div class="card text-white bg-warning o-hidden h-100">
+						<div class="card-body">
+							<div class="card-body-icon">
+								<i class="fas fa-fw fa-list"></i>
+							</div>
+							<div class="mr-5">취창업</div>
+						</div>
+						<a class="card-footer text-white clearfix small z-1" href="#">
+							<span class="float-left">보러가기</span>
+							<span class="float-right">
+								<i class="fas fa-angle-right"></i>
+							</span>
+						</a>
+					</div>
+				</div>
+				<div class="col-xl-3 col-sm-6 mb-3">
+					<div class="card text-white bg-success o-hidden h-100">
+						<div class="card-body">
+							<div class="card-body-icon">
+								<i class="fas fa-fw fa-shopping-cart"></i>
+							</div>
+							<div class="mr-5">친목</div>
+						</div>
+						<a class="card-footer text-white clearfix small z-1" href="#">
+							<span class="float-left">보러가기</span>
+							<span class="float-right">
+								<i class="fas fa-angle-right"></i>
+							</span>
+						</a>
+						</div>
+					</div>
+				</div>
+			</div>
+	  </div>
+
+
     <!-- /.container-fluid-->
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">

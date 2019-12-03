@@ -1,7 +1,7 @@
 <?php
 $host ="localhost";
-$user ="root";
-$pass ="digh1221";
+$user ="park";
+$pass ="0000";
 //연동 확인
 $mysqli = new mysqli($host,$user,$pass);
 if(!$mysqli){
